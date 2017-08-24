@@ -25,6 +25,7 @@ public class Customer implements java.io.Serializable, ICustomer {
 	private String email;
 
 	public Customer() {
+		this.customerId = -1;
 	}
 
 	public Customer(String firstName, String lastName, String address1, String city, String postCode) {
@@ -153,6 +154,25 @@ public class Customer implements java.io.Serializable, ICustomer {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public void save() {
+		String VStatement = "insert into " + MySQLAccess.dbname + ".customer values(default, " +
+		"\"" + getTitle() + "\", " +
+		"\"" + getFirstName() + "\", " + 
+		"\"" + getLastName() + "\", " + 
+		"\"" + getAddress1() + "\", " + 
+		"\"" + getAddress2() + "\", " + 
+		"\"" + getCity() + "\", " + 
+		"\"" + getCounty() + "\", " + 
+		"\"" + getPostCode() + "\", " + 
+		"\"" + getCountry() + "\", " +
+		"\"" + getHomePhone() + "\", " + 
+		"\"" + getMobilePhone() + "\", " + 
+		"\"" + getEmail() + "\");";
+		MySQLAccess.executeinsertStatement(VStatement);
+//        setCustomerId(NewID);
+//        return NewID;
 	}
 
 }

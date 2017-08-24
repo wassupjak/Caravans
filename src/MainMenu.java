@@ -3,6 +3,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainMenu {
 
@@ -49,6 +51,11 @@ public class MainMenu {
 		frmMainMenu.getContentPane().add(lblMainMenu);
 		
 		JButton btnCustomers = new JButton("Customers...");
+		btnCustomers.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				CustomersForm.main(null);
+			}
+		});
 		btnCustomers.setBounds(143, 66, 162, 29);
 		frmMainMenu.getContentPane().add(btnCustomers);
 		

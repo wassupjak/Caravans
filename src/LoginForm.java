@@ -3,6 +3,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import com.sun.javafx.tk.FocusCause;
+
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -56,11 +59,13 @@ public class LoginForm {
 		frmLogin.getContentPane().add(label_1);
 		
 		txtServerAddress = new JTextField();
+		txtServerAddress.setText("localhost:3306");
 		txtServerAddress.setBounds(185, 77, 130, 26);
 		frmLogin.getContentPane().add(txtServerAddress);
 		txtServerAddress.setColumns(10);
 		
 		txtUsername = new JTextField();
+		txtUsername.setText("caravans");
 		txtUsername.setColumns(10);
 		txtUsername.setBounds(185, 115, 130, 26);
 		frmLogin.getContentPane().add(txtUsername);
@@ -109,6 +114,7 @@ public class LoginForm {
 	private void login(String aServer, String aUsername, String aPassword) throws Exception{
 		MySQLAccess db = new MySQLAccess();
 		db.connectToDB(aServer, aUsername, aPassword);
+		Main.FCustomers.PopulateAllCustomers();
 		MainMenu.main(null);;
 		frmLogin.dispose();
 	}
