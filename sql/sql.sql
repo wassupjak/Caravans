@@ -38,33 +38,3 @@ event_name varchar(255),
 event_location varchar(255),
 primary key (event_id)
 );
-
-insert into adcaravans.customer values(
-Default,
-"Mr",
-"Jack",
-"Wass",
-"44 Shelley Close",
-"",
-"Yeovil",
-"Somerset",
-"BA21 3TX",
-"UK",
-"01935 415570",
-"07450517784",
-"wassj93@gmail.com");select LAST_INSERT_ID();
-
-insert into adcaravans.customer values(
-Default,
-"Miss",
-"Nicole",
-"Martin",
-"1 Edith Court",
-"",
-"Gillingham",
-"Forset",
-"SP8 4PN",
-"UK",
-"",
-"07783375895",
-"nioclemmartin1992@gmail.com");
